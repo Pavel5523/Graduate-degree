@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
+<div class="menu">
+    <ul>
+        <li>Пользователь: {{user.username}}</li>
+        <li>
+            <form action="{%url 'come'%}" method="post">
+                {% csrf_token %}
+                <button>Выйти</button>
+            </form></li>
+        <li>создать карточку</li>
+        <li>просмотреть карточки</li>
+        <li><a href="#">начать обучение</a></li>
+    </ul>
+</div>
 <h1>Home</h1>
 </body>
 </html>
