@@ -1,4 +1,20 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(207, 205, 160);
+}
+.menu{
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+}
+li{
     background-color: aquamarine;
+    border: solid 1px;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
 }

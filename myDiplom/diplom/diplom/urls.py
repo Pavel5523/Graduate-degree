@@ -19,9 +19,9 @@ from django.urls import path
 from flashcards import views
 
 urlpatterns = [
+    path('', views.start, name='start'),
     path('admin/', admin.site.urls),
     path('signup/', views.signupuser, name='signupuser'),
     path('home/', views.home, name='home'),
-    path('start/', views.start, name='start'),
     path('come/', views.come, name='come'),
 ]
