@@ -8,11 +8,7 @@
 <div class="menu">
     <ul>
         <li>Пользователь: {{user.username}}</li>
-        <li>
-            <form action="{%url 'come'%}" method="post">
-                {% csrf_token %}
-                <button>Выйти</button>
-            </form></li>
+        <li><a href="{%url 'come'%}">Выйти</a></li>
         <li>создать карточку</li>
         <li>просмотреть карточки</li>
         <li><a href="#">начать обучение</a></li>

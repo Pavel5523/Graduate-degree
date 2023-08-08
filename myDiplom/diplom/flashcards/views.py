@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 
 
 def signupuser(request):
@@ -24,6 +24,7 @@ def signupuser(request):
                           {'form': UserCreationForm(), 'error': 'Пароли не совпадают'})
 
 def home(request):
+    logout(request)
     return render(request, 'flashcards/home.html')
 
 
@@ -32,7 +33,17 @@ def start(request):
 
 
 def come(request):
-    return render(request, 'flashcards/come.html')
+    # return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
+    if request.method == 'POST':
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request, 'flascards/come.html',
+                      {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
+        if user:
+            login(request, user)
+            return redirect('home')
+    else:
+         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
 
 
 def logoutuser(request):
