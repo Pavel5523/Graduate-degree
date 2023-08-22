@@ -33,17 +33,18 @@ def start(request):
 
 
 def come(request):
-    # return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
+
+    else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
             return render(request, 'flascards/come.html',
-                      {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
+                          {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
         if user:
             login(request, user)
             return redirect('home')
-    else:
-         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
+
 
 
 def logoutuser(request):
