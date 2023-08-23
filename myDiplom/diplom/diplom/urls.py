@@ -24,4 +24,8 @@ urlpatterns = [
     path('signup/', views.signupuser, name='signupuser'),
     path('home/', views.home, name='home'),
     path('come/', views.come, name='come'),
+    path('flashcard/', views.flashcard, name='flashcard'),
+    path('create_flascard/', views.create_flashcard, name='create_flashcard'),
+
+
 ]

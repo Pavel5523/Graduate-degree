@@ -17,11 +17,12 @@ def signupuser(request):
                 return redirect('home')
             except IntegrityError:
                 return render(request, 'flashcards/signupuser.html',
-                {'form': UserCreationForm(),
-                'error': 'Такое имя пользователя уже существует. Выберите другое имя'})
+                              {'form': UserCreationForm(),
+                               'error': 'Такое имя пользователя уже существует. Выберите другое имя'})
         else:
             return render(request, 'flashcards/signupuser.html',
                           {'form': UserCreationForm(), 'error': 'Пароли не совпадают'})
+
 
 def home(request):
     logout(request)
@@ -35,21 +36,30 @@ def start(request):
 def come(request):
     if request.method == 'GET':
         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
-
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        print(user)
         if user is None:
-            return render(request, 'flascards/come.html',
+            return render(request, 'flashcards/come.html',
                           {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
-        if user:
+
+        else:
             login(request, user)
             return redirect('home')
-
 
 
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('start')
+
+
+def flashcard(request):
+    if request.method == 'GET':
+        return render(request, 'flashcards/flashcard.html')
+
+def create_flashcard(request):
+    if request.method == 'GET':
+        return render(request, 'flashcards/create_flashcard.html')
 
 # Create your views here.
