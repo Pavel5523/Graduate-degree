@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .forms import FlashcardForm
 
 
 def signupuser(request):
@@ -58,8 +59,20 @@ def flashcard(request):
     if request.method == 'GET':
         return render(request, 'flashcards/flashcard.html')
 
+
 def create_flashcard(request):
     if request.method == 'GET':
-        return render(request, 'flashcards/create_flashcard.html')
+        return render(request, 'flashcards/create_flashcard.html', {'form': FlashcardForm()})
+    else:
+        try:
+            form = FlashcardForm(request.POST)
+            new_flashcard = form.save(commit=False)
+            new_flashcard.user = request.user
+            new_flashcard.save()
+            return redirect('create_flashcard.html', {'error': 'Карточка созданна успешно'})
+        except ValueError:
+            return render(request, 'flashcards/create_flashcard.html',
+                          {'form': FlashcardForm(),
+                        'error': 'Заполненны неверные данные попробуйте еще раз'})
 
 # Create your views here.

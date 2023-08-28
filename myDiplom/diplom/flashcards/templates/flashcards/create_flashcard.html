@@ -6,5 +6,11 @@
 </head>
 <body>
     <h1>Создание карточки</h1>
+    <form  method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button>Создать карточку</button>
+    </form>
+<h4>{{error}}</h4>
 </body>
 </html>
