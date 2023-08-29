@@ -40,11 +40,12 @@ def come(request):
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         print(user)
+        print(request.POST['password'])
         if user is None:
             return render(request, 'flashcards/come.html',
                           {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
-
         else:
+            print(user)
             login(request, user)
             return redirect('home')
 
@@ -73,6 +74,6 @@ def create_flashcard(request):
         except ValueError:
             return render(request, 'flashcards/create_flashcard.html',
                           {'form': FlashcardForm(),
-                        'error': 'Заполненны неверные данные попробуйте еще раз'})
+                           'error': 'Заполненны неверные данные попробуйте еще раз'})
 
 # Create your views here.
