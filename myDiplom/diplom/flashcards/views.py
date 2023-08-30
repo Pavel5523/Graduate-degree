@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import FlashcardForm
+from django.views.generic import ListView
+from .models import *
 
 
 def signupuser(request):
@@ -49,6 +51,9 @@ def come(request):
             login(request, user)
             return redirect('home')
 
+
+# class Come():
+#     ...
 
 def logoutuser(request):
     if request.method == 'POST':
