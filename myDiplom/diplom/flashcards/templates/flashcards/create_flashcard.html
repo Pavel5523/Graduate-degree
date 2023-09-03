@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Пользователь: {{ user.username }}</h1>
     <h1>Создание карточки</h1>
     <form  method="post">
         {%csrf_token%}

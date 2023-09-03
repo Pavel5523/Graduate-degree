@@ -28,8 +28,11 @@ def signupuser(request):
 
 
 def home(request):
-    logout(request)
-    return render(request, 'flashcards/home.html')
+    if request.method == 'POST':
+        logout(request)
+        return redirect('come')
+    else:
+        return render(request, 'flashcards/home.html')
 
 
 def start(request):
@@ -41,19 +44,13 @@ def come(request):
         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
-        print(user)
-        print(request.POST['password'])
         if user is None:
             return render(request, 'flashcards/come.html',
                           {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
         else:
-            print(user)
             login(request, user)
             return redirect('home')
 
-
-# class Come():
-#     ...
 
 def logoutuser(request):
     if request.method == 'POST':

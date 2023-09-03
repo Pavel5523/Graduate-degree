@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.start, name='start'),
     path('admin/', admin.site.urls),
     path('signup/', views.signupuser, name='signupuser'),
+    # path('homme/', views.homme, name='homme'),
     path('home/', views.home, name='home'),
     path('come/', views.come, name='come'),
     # path('come/', Come.as_views(), name='come'),
