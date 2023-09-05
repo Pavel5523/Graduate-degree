@@ -1,17 +1,22 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
 <body>
-    <h1>Пользователь: {{ user.username }}</h1>
+    <h1 class="nameUser">Пользователь: {{ user.username }}</h1>
     <h1>Создание карточки</h1>
-    <form  method="post">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button>Создать карточку</button>
-    </form>
+    <div class="createFlashcard">
+        <form  method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <div class="butCreateContainer"><button class="butCreate">Создать карточку</button></div>
+            <br>
+        </form>
+    </div>
 <h4>{{error}}</h4>
 </body>
 </html>
