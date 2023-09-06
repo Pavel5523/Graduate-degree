@@ -3,6 +3,9 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .forms import FlashcardForm
+from django.views.generic import ListView
+from .models import *
 
 
 def signupuser(request):
@@ -17,15 +20,19 @@ def signupuser(request):
                 return redirect('home')
             except IntegrityError:
                 return render(request, 'flashcards/signupuser.html',
-                {'form': UserCreationForm(),
-                'error': 'Такое имя пользователя уже существует. Выберите другое имя'})
+                              {'form': UserCreationForm(),
+                               'error': 'Такое имя пользователя уже существует. Выберите другое имя'})
         else:
             return render(request, 'flashcards/signupuser.html',
                           {'form': UserCreationForm(), 'error': 'Пароли не совпадают'})
 
+
 def home(request):
-    logout(request)
-    return render(request, 'flashcards/home.html')
+    if request.method == 'POST':
+        logout(request)
+        return redirect('come')
+    else:
+        return render(request, 'flashcards/home.html')
 
 
 def start(request):
@@ -35,21 +42,40 @@ def start(request):
 def come(request):
     if request.method == 'GET':
         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
-
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'flascards/come.html',
+            return render(request, 'flashcards/come.html',
                           {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
-        if user:
+        else:
             login(request, user)
             return redirect('home')
-
 
 
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('start')
+
+
+def flashcard(request):
+    if request.method == 'GET':
+        return render(request, 'flashcards/flashcard.html')
+
+
+def create_flashcard(request):
+    if request.method == 'GET':
+        return render(request, 'flashcards/create_flashcard.html', {'form': FlashcardForm()})
+    else:
+        try:
+            form = FlashcardForm(request.POST)
+            new_flashcard = form.save(commit=False)
+            new_flashcard.user = request.user
+            new_flashcard.save()
+            return redirect('create_flashcard.html', {'error': 'Карточка созданна успешно'})
+        except ValueError:
+            return render(request, 'flashcards/create_flashcard.html',
+                          {'form': FlashcardForm(),
+                           'error': 'Заполненны неверные данные попробуйте еще раз'})
 
 # Create your views here.

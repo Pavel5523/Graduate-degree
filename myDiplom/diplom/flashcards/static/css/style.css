@@ -18,3 +18,19 @@ li{
     font-size: 18px;
     padding: 10px;
 }
+.createFlashcard{
+    position: absolute;
+    /* left: 50%; */
+    text-align: center;
+    border: solid 5px;
+    background-color: aquamarine;
+    width: 500px;
+}
+.butCreate{
+    background-color: brown;
+    /* border: solid 5px; */
+    border-radius: 5px;
+}
+/* .butCreateContainer{
+    background-color: black;
+} */

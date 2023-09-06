@@ -6,6 +6,8 @@ class Flashcards(models.Model):
     subject = models.CharField(max_length=50, blank=True, null=True)
     term = models.CharField(max_length=100)
     meaning = models.CharField(max_length=250)
+    term_photo = models.ImageField(upload_to='photos', blank=True, null=True)
+    meaning_photo = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
         return self.term

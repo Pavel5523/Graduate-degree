@@ -17,11 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from flashcards import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', views.start, name='start'),
     path('admin/', admin.site.urls),
     path('signup/', views.signupuser, name='signupuser'),
+    # path('homme/', views.homme, name='homme'),
     path('home/', views.home, name='home'),
     path('come/', views.come, name='come'),
+    # path('come/', Come.as_views(), name='come'),
+    path('flashcard/', views.flashcard, name='flashcard'),
+    path('create_flashcard/', views.create_flashcard, name='create_flashcard'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
