@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
 <body>
-<div class="menu">
+<div class="homeMenu">
+    <h3>Пользователь: {{ user.username }}</h3>
     <ul>
-        <li>Пользователь: {{ user.username }}</li>
+        <li><a href="{%url 'create_flashcard'%}">создать карточку</a></li>
+        <li><a href="{%url 'flashcard'%}">просмотреть карточки</a></li>
+        <li><a href="#">начать обучение</a></li>
         <li>
             <form method="post">
                 {%csrf_token%}
@@ -15,9 +20,6 @@
                 <button>Выйти</button>
             </form>
         </li>
-        <li><a href="{%url 'create_flashcard'%}">создать карточку</a></li>
-        <li><a href="{%url 'flashcard'%}">просмотреть карточки</a></li>
-        <li><a href="#">начать обучение</a></li>
     </ul>
 </div>
 <h1>Home</h1>

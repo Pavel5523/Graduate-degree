@@ -1,16 +1,20 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
 <body>
-<h1>Авторизация:</h1>
-<h4>{{error}}</h4>
-<form method="post">
+    <div class="containerLogin"> 
+<h1>Авторизация</h1>
+<h4>{{error}}</h4>   
+    <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button>Авторизация</button>
-</form>
+    <div class="butLogin"><button>Войти</button></div>
+    </form>
+</div>
 </body>
 </html>

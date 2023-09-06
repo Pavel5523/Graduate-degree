@@ -11,16 +11,19 @@ body{
     padding: 20px;
     list-style: none;
 }
-li{
+.menu li{
     background-color: aquamarine;
     border: solid 1px;
     border-radius: 5px;
     font-size: 18px;
     padding: 10px;
 }
+.menu a{
+    text-decoration: none;
+    color: black;
+}
 .createFlashcard{
     position: absolute;
-    /* left: 50%; */
     text-align: center;
     border: solid 5px;
     background-color: aquamarine;
@@ -28,9 +31,48 @@ li{
 }
 .butCreate{
     background-color: brown;
-    /* border: solid 5px; */
     border-radius: 5px;
 }
-/* .butCreateContainer{
-    background-color: black;
-} */
+.containerLogin{
+    position: absolute;
+    border: solid 5px;
+    background-color:aquamarine;
+    padding: 10px;
+    left: 30%;
+    right: 30%;
+    text-align: center;
+    margin-top: 100px;
+    border-radius: 15px;
+}
+.containerLogin button{
+    background-color: rgb(115, 255, 0);
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+h1{
+    text-align: center;
+}
+button{
+    background-color: blueviolet;
+    left: 30%;
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    border-radius: 10px;
+}
+li{
+    list-style-type: none;
+}
+.homeMenu a{
+    text-decoration: none;
+    background-color: rgb(135, 241, 183);
+}
+h3{
+    background-color: aquamarine;
+    margin-top: 0;
+}
+.homeMenu li a{
+    background-color: chocolate;
+}
