@@ -28,7 +28,7 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('come/', views.come, name='come'),
     # path('come/', Come.as_views(), name='come'),
-    path('flashcard/', views.flashcard, name='flashcard'),
+    path('flashcard/<int:pkFlashcard>/', views.flashcard, name='flashcard'),
     path('create_flashcard/', views.create_flashcard, name='create_flashcard'),
 ]
 

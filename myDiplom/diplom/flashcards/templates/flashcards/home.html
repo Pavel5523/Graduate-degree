@@ -11,7 +11,7 @@
     <h3>Пользователь: {{ user.username }}</h3>
     <ul>
         <li><a href="{%url 'create_flashcard'%}">создать карточку</a></li>
-        <li><a href="{%url 'flashcard'%}">просмотреть карточки</a></li>
+        <li><a href="{% url 'flashcard' flashcard.id %}">просмотреть карточки</a></li>
         <li><a href="#">начать обучение</a></li>
         <li>
             <form method="post">

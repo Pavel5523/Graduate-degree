@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -58,9 +58,9 @@ def logoutuser(request):
         return redirect('start')
 
 
-def flashcard(request):
-    if request.method == 'GET':
-        return render(request, 'flashcards/flashcard.html')
+# def flashcard(request):
+#     if request.method == 'GET':
+#         return render(request, 'flashcards/flashcard.html')
 
 
 def create_flashcard(request):
@@ -77,5 +77,9 @@ def create_flashcard(request):
             return render(request, 'flashcards/create_flashcard.html',
                           {'form': FlashcardForm(),
                            'error': 'Заполненны неверные данные попробуйте еще раз'})
+
+def flashcard(request, pkFlashcard):
+    flashcard = get_object_or_404(Flashcards, pk=pkFlashcard)
+    return render(request, 'flashcards/flashcard.html', {'flashcard': flashcard})
 
 # Create your views here.
