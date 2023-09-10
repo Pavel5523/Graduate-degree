@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <h1>Карточка</h1>
+{% for flashcard in flashcards%}
+    <ul>
+        <li><div class="blockFlashcard">{{ flashcard.subject }} {{ flashcard.term }} {{ flashcard.meaning }}</div></li>
+    </ul>
+{%endfor%}
 </body>
 </html>

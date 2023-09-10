@@ -78,8 +78,8 @@ def create_flashcard(request):
                           {'form': FlashcardForm(),
                            'error': 'Заполненны неверные данные попробуйте еще раз'})
 
-def flashcard(request, pkFlashcard):
-    flashcard = get_object_or_404(Flashcards, pk=pkFlashcard)
-    return render(request, 'flashcards/flashcard.html', {'flashcard': flashcard})
+def flashcard(request):
+    flashcards = Flashcards.objects.filter(user=request.user)
+    return render(request, 'flashcards/flashcard.html', {'flashcards': flashcards})
 
 # Create your views here.
