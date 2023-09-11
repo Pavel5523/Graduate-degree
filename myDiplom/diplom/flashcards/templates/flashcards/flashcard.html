@@ -9,8 +9,12 @@
 <body>
 <h1>Карточка</h1>
 {% for flashcard in flashcards%}
-    <ul>
-        <li><div class="blockFlashcard">{{ flashcard.subject }} {{ flashcard.term }} {{ flashcard.meaning }}</div></li>
+    <div class="blockFlashcards"><ul>
+        <li><div class="blockFlashcard">
+            <div><span class="subject">{{ flashcard.subject }}</span></div>
+            <div><span class="term">{{ flashcard.term }}</span></div>
+            <div><span class="meaning">{{ flashcard.meaning }}</span></div>
+    </div></li>
     </ul>
 {%endfor%}
 </body>
