@@ -14,6 +14,11 @@
             <div><span class="subject">{{ flashcard.subject }}</span></div>
             <div><span class="term">{{ flashcard.term }}</span></div>
             <div><span class="meaning">{{ flashcard.meaning }}</span></div>
+            <div>
+                <form method="post" action="{% url 'delete_flashcard' flashcard.id %}">
+                    {%csrf_token%}
+                    <button>X</button>
+                </form></div>
     </div></li>
     </ul>
 {%endfor%}

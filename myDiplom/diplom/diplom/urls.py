@@ -28,6 +28,7 @@ urlpatterns = [
     path('come/', views.come, name='come'),
     path('flashcard/', views.flashcard, name='flashcard'),
     path('create_flashcard/', views.create_flashcard, name='create_flashcard'),
+    path('flashcard/<int:flashcard_pk>/delete', views.delete_flashcard, name='delete_flashcard')
 ]
 
 if settings.DEBUG:
