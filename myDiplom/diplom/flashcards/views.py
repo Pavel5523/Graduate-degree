@@ -6,6 +6,7 @@ from django.contrib.auth import login, logout, authenticate
 from .forms import FlashcardForm
 from django.views.generic import ListView
 from .models import *
+from random import randint
 
 
 def signupuser(request):
@@ -87,8 +88,18 @@ def flashcard(request):
 def delete_flashcard(request, flashcard_pk):
     flashcard = get_object_or_404(Flashcards, pk=flashcard_pk, user=request.user)
     if request.method == 'POST':
-        print(flashcard)
         flashcard.delete()
         return redirect('flashcard')
+
+
+def back_home(request):
+    return redirect(request, 'flashcard')
+
+
+def education(request):
+    flashcard = Flashcards.objects.filter(user=request.user)
+    print(flashcard[randint(0, len(flashcard) - 1)])
+    print(flashcard)
+    return render(request, 'flashcards/education.html', {'flashcard': flashcard})
 
 # Create your views here.

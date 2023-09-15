@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1 class="nameUser">Пользователь: {{ user.username }}</h1>
+    <h4><a href="{% url 'home'%}">Назад</a></h4>
     <h1>Создание карточки</h1>
     <div class="createFlashcard">
         <form  method="post">

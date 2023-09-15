@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <h4><a href="{% url 'home'%}">Назад</a></h4>
 <h1>Карточка</h1>
 {% for flashcard in flashcards%}
     <div class="blockFlashcards"><ul>
         <li><div class="blockFlashcard">
-            <div><span class="subject">{{ flashcard.subject }}</span></div>
+            {%if flashcard.subject%}
+            <div><span class="subject"> Класс {{ flashcard.subject }}</span></div>
+            {%endif%}
             <div><span class="term">{{ flashcard.term }}</span></div>
             <div><span class="meaning">{{ flashcard.meaning }}</span></div>
             <div>
