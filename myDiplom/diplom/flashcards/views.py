@@ -98,8 +98,8 @@ def back_home(request):
 
 def education(request):
     flashcard = Flashcards.objects.filter(user=request.user)
-    print(flashcard[randint(0, len(flashcard) - 1)])
-    print(flashcard)
+    # print(flashcard[randint(0, len(flashcard) - 1)])
+    # print(flashcard)
     return render(request, 'flashcards/education.html', {'flashcard': flashcard})
 
 # Create your views here.

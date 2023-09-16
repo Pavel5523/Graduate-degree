@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-{%for card in flashcard%}
-    <div>{{card.subject}}</div>
-    <div>{{card.tearm}}</div>
-    <div>{{card.mearning}}</div>
+    <h4><a href="{% url 'home'%}">Назад</a></h4>
+{% for card in flashcard %}
+    <br>
+    <div class="blockFlashcard"><br>
+        <div>{{flashcard}}</div>
+        <div>{{card.subject}}</div>
+        <div>{{card.term}}</div>
+        <div>{{card.meaning}}</div>
+    </div>
 {%endfor%}
 </body>
 </html>
