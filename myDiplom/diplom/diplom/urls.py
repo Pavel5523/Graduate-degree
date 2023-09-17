@@ -30,7 +30,8 @@ urlpatterns = [
     path('create_flashcard/', views.create_flashcard, name='create_flashcard'),
     path('flashcard/<int:flashcard_pk>/delete', views.delete_flashcard, name='delete_flashcard'),
     # path('back_home/', views.back_home, name='back_home'),
-    path('education/', views.education, name='education')
+    path('education/', views.education, name='education'),
+    path('education/', views.next, name='next')
 ]
 
 if settings.DEBUG:

@@ -104,3 +104,8 @@ h3{
 .blockFlashcards ul li{
     text-align: center;
 }
+.block_roll{
+    display: flex;
+    justify-content: space-around;
+}
+

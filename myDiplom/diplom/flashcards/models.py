@@ -10,6 +10,6 @@ class Flashcards(models.Model):
     meaning_photo = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
-        return f'{self.term} {self.subject}'
+        return f'{self.subject} {self.term} {self.meaning}'
 
 # Create your models here.
