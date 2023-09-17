@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f66ce76-26b8-44e0-ba9f-bb8711f0b796" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myDiplom/diplom/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/diplom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/diplom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/create_flashcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/create_flashcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +30,15 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/run/media/pavel/sdc/graduate_work",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/run/media/pavel/sdc/graduate_work&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="graduate_work" />
