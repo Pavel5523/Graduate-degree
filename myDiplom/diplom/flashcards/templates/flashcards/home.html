@@ -7,20 +7,18 @@
     <link rel="stylesheet" href="{%static 'css/style.css'%}">
 </head>
 <body>
+<div class="block_user"><h3>Пользователь: <span class="user">{{ user.username }}</span></h3></div>
 <div class="homeMenu">
-    <h3>Пользователь: {{ user.username }}</h3>
     <ul>
         <li><a href="{%url 'create_flashcard'%}">создать карточку</a></li>
         <li><a href="{% url 'flashcard' %}">просмотреть карточки</a></li>
         <li><a href="{% url 'education' %}">начать обучение</a></li>
-        <li>
-            <form method="post">
-                {%csrf_token%}
-                {{form.as_p}}
-                <button>Выйти</button>
-            </form>
-        </li>
     </ul>
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button>Выйти</button>
+    </form>
 </div>
 <h1>Home</h1>
 </body>

@@ -1,6 +1,7 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(207, 205, 160);
+    text-align: center;
 }
 .menu{
     background-color: lightskyblue;
@@ -62,22 +63,31 @@ button{
     font-size: medium;
     border-radius: 10px;
 }
-li{
+/* li{
     list-style-type: none;
+} */
+h3{
+    text-align: center;
 }
 .homeMenu a{
     text-decoration: none;
-    background-color: rgb(135, 241, 183);
+    font-size: 36px;
+    font-style: italic;
+    color: black;
+    /* display: inline-block; */
 }
-h3{
-    background-color: aquamarine;
-    margin-top: 0;
+.homeMenu ul{
+    padding-left: 0;
 }
-.homeMenu li a{
-    background-color: chocolate;
+.homeMenu li{
+    border: solid 3px;
+    margin-top: 10px;
+    height: 40px;
+    background-color: cornflowerblue;
+    display: grid;
+    border-radius: 10px;
 }
 .blockFlashcard{
-    /* position: absolute; */
     border: solid 5px;
     background-color: coral;
     text-align: center;
@@ -108,4 +118,12 @@ h3{
     display: flex;
     justify-content: space-around;
 }
-
+.user{
+    color: rgb(34, 53, 223);
+    font-size: 20px;
+}
+.block_user{
+    border: solid 3px;
+    border-radius: 10px;
+    background-color: rgb(190, 247, 106);
+}
