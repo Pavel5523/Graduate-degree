@@ -15,12 +15,17 @@
         <div class="subject"><span class="depiction">Тема:</span><span class="values"> {{flashcard.subject}}</span></div>
         {% endif %}
         <div class="term"><span class="depiction">Термин:</span><span class="values"> {{flashcard.term}}</span></div>
-        <div class="meaning"><span class="depiction">Значение:</span><span class="values"> {{flashcard.meaning}}</span></div>
+        <div class="meaning"><span class="depiction">Значение:</span><span class="values" id="meaning"> {{flashcard.meaning}}</span></div>
         <div class="block_roll">
-            <div><a href="#" class="roll">Перевернуть</a></div>
+            <div><a href="#" class="roll" onclick="push()">Перевернуть</a></div>
             <div><a href="{% url 'next'%}" class="next_card">Далее</a></div>
         </div>
     </div>
-
+<script>let meaning = document.querySelector('#meaning')
+meaning.style.display = 'none'
+function push(){
+    meaning.style.display = ''
+}
+</script>
 </body>
 </html>
