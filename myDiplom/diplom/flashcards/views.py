@@ -73,7 +73,7 @@ def create_flashcard(request):
             new_flashcard = form.save(commit=False)
             new_flashcard.user = request.user
             new_flashcard.save()
-            return redirect('create_flashcard.html', {'error': 'Карточка созданна успешно'})
+            return redirect('create_flashcard',) #{'error': 'Карточка созданна успешно'})
         except ValueError:
             return render(request, 'flashcards/create_flashcard.html',
                           {'form': FlashcardForm(),
