@@ -2,6 +2,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(207, 205, 160);
     text-align: center;
+    padding-bottom: 0;
+    /* position: relative; */
 }
 .menu{
     background-color: lightskyblue;
@@ -63,9 +65,9 @@ button{
     font-size: medium;
     border-radius: 10px;
 }
-/* li{
+li{
     list-style-type: none;
-} */
+}
 h3{
     text-align: center;
 }
@@ -88,32 +90,39 @@ h3{
     border-radius: 10px;
 }
 .blockFlashcard{
+    /* position:absolute; */
     border: solid 5px;
-    background-color: coral;
+    background-color: rgb(29, 48, 61);
     text-align: center;
-    max-width: 400px;
     border-radius: 10px;
+    /* padding: 10px; */
+    padding-top: 0;
+    left: 30%;
+    right: 30%;
+    /* margin-top: 50px; */
 }
-.term{
+/* .term{
     border: solid 2px;
-    background-color: aliceblue;
+    background-color: rgb(148, 200, 245);
     margin: 5px;
-}
-.meaning{
+    font-size: 24px;
+} */
+/* .meaning{
     border: solid 2px;
     background-color: aliceblue;
     margin-top: 5px;
-}
-.subject{
+} */
+/* .subject{
     border: solid 2px;
     background-color: aliceblue;
-}
+    font-size: 24px;
+} */
 .blockFlashcard div{
     margin: 10px;
 }
-.blockFlashcards ul li{
+/* .blockFlashcards ul li{
     text-align: center;
-}
+} */
 .block_roll{
     display: flex;
     justify-content: space-around;
@@ -126,4 +135,39 @@ h3{
     border: solid 3px;
     border-radius: 10px;
     background-color: rgb(190, 247, 106);
+}
+.back{
+    background-color: greenyellow;
+    display: grid;
+    font-size: 24px;
+    height: 30px;
+    margin-right: 200px;
+    margin-left: 200px;
+    border-radius: 10px;
+}
+a {
+    text-decoration: none;
+}
+ul{
+    padding-left: 0;
+}
+.values{
+    font-style: italic;
+    font-size: 24px;
+    color: white;
+}
+.depiction{
+    font-size: 24px;
+    color: white;
+}
+.education_link{
+    background-color: rgb(111, 214, 228);
+    width: 200px;
+    display: grid;
+    border-radius: 3px;
+}
+.education_link a{
+    font-size: 20px;
+    margin-bottom: 0;
+    color: black;
 }

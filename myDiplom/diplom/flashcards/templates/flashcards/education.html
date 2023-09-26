@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h4><a href="{% url 'home'%}">Назад</a></h4>
+    <div class="back"><a href="{% url 'home'%}">Назад</a></div>
 
     <br>
     <div class="blockFlashcard"><br>
         {% if flashcard.subject %}
-        <div class="subject"><span class="depiction">Тема:</span><span class="values"> {{flashcard.subject}}</span></div>
+        <div class="subject"><span class="depiction">Категория:</span><span class="values"> {{flashcard.subject}}</span></div>
         {% endif %}
         <div class="term"><span class="depiction">Термин:</span><span class="values"> {{flashcard.term}}</span></div>
         <div class="meaning"><span class="depiction">Значение:</span><span class="values" id="meaning"> {{flashcard.meaning}}</span></div>
         <div class="block_roll">
-            <div><a href="#" class="roll" onclick="push()">Перевернуть</a></div>
-            <div><a href="{% url 'next'%}" class="next_card">Далее</a></div>
+            <div class="education_link"><a href="#" class="roll" onclick="push()">Перевернуть</a></div>
+            <div class="education_link"><a href="{% url 'next'%}" class="next_card">Далее</a></div>
         </div>
     </div>
 <script>let meaning = document.querySelector('#meaning')

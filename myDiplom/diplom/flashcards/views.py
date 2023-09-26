@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import FlashcardForm
-from django.views.generic import ListView
+# from django.views.generic import ListView
 from .models import *
 from random import randint
+from django.contrib import messages
 
 
 def signupuser(request):
@@ -73,7 +74,9 @@ def create_flashcard(request):
             new_flashcard = form.save(commit=False)
             new_flashcard.user = request.user
             new_flashcard.save()
-            return redirect('create_flashcard',) #{'error': 'Карточка созданна успешно'})
+            # messages.success(request, 'ooooooooo')
+            # print(mess)
+            return redirect('create_flashcard') #{'error': 'Карточка созданна успешно'})
         except ValueError:
             return render(request, 'flashcards/create_flashcard.html',
                           {'form': FlashcardForm(),
@@ -98,8 +101,11 @@ def back_home(request):
 
 def education(request):
     flashcard = Flashcards.objects.filter(user=request.user)
+    print(len(flashcard))
+    # len_flashcard = len(flashcard)
     random_card = flashcard[randint(0, len(flashcard) - 1)]
     return render(request, 'flashcards/education.html', {'flashcard': random_card})
+
 
 def next(request):
     return render(request, 'flashcards/education.html')
