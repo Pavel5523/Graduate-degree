@@ -135,9 +135,10 @@ h3{
     border: solid 3px;
     border-radius: 10px;
     background-color: rgb(190, 247, 106);
+    margin-bottom: 15px;
 }
 .back{
-    background-color: greenyellow;
+    background-color: rgb(60, 182, 135);
     display: grid;
     font-size: 24px;
     height: 30px;
@@ -147,6 +148,7 @@ h3{
 }
 a {
     text-decoration: none;
+    color: black;
 }
 ul{
     padding-left: 0;

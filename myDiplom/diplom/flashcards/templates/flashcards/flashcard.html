@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="block_user"><h3>Пользователь: <span class="user">{{ user.username }}</span></h3></div>
     <div class="back"><a href="{% url 'home'%}">Назад</a></div>
 {% for flashcard in flashcards%}
     <ul>
         <li><div class="blockFlashcard">
             {%if flashcard.subject%}
-            <div><span class="subject"> Класс: {{ flashcard.subject }}</span></div>
+            <div><span class="depiction">Категория:</span><span class="values"> {{ flashcard.subject }}</span></div>
             {%endif%}
-            <div><span class="term">{{ flashcard.term }}</span></div>
-            <div><span class="meaning">{{ flashcard.meaning }}</span></div>
+            <div><span class="depiction">Термин</span><span class="values"> {{ flashcard.term }}</span></div>
+            <div><span class="depiction">Значение</span><span class="values"> {{ flashcard.meaning }}</span></div>
             <div>
                 <form method="post" action="{% url 'delete_flashcard' flashcard.id %}">
                     {%csrf_token%}

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="block_user"><h3>Пользователь: <span class="user">{{ user.username }}</span></h3></div>
     <div class="back"><a href="{% url 'home'%}">Назад</a></div>
 
     <br>
@@ -18,7 +19,7 @@
         <div class="meaning"><span class="depiction">Значение:</span><span class="values" id="meaning"> {{flashcard.meaning}}</span></div>
         <div class="block_roll">
             <div class="education_link"><a href="#" class="roll" onclick="push()">Перевернуть</a></div>
-            <div class="education_link"><a href="{% url 'next'%}" class="next_card">Далее</a></div>
+            <div class="education_link"><a href="{% url 'education'%}" class="next_card">Далее</a></div>
         </div>
     </div>
 <script>let meaning = document.querySelector('#meaning')
