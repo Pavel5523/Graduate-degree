@@ -27,10 +27,13 @@ body{
 }
 .createFlashcard{
     position: absolute;
-    text-align: center;
+    /* text-align: center; */
     border: solid 5px;
+    border-radius: 10px;
     background-color: aquamarine;
-    width: 500px;
+    /* width: 500px; */
+    left: 30%;
+    right: 30%;
 }
 .butCreate{
     background-color: brown;
