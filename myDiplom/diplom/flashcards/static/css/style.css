@@ -59,6 +59,7 @@ body{
 }
 h1{
     text-align: center;
+    /* margin-top: 0; */
 }
 button{
     background-color: blueviolet;
@@ -175,4 +176,12 @@ ul{
     font-size: 20px;
     margin-bottom: 0;
     color: black;
+}
+.success{
+    /* position: absolute; */
+    background-color: rgb(147, 244, 99);
+    font-size: 20px;
+    right: 30%;
+    left: 30%;
+    margin-bottom: 0;
 }
