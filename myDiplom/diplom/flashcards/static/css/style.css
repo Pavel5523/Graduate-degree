@@ -178,10 +178,11 @@ ul{
     color: black;
 }
 .success{
-    /* position: absolute; */
+    position: absolute;
     background-color: rgb(147, 244, 99);
     font-size: 20px;
-    right: 30%;
-    left: 30%;
-    margin-bottom: 0;
+    right: 20%;
+    left: 20%;
+    bottom: 0;
+    border-radius: 10px;
 }
