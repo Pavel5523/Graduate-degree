@@ -7,6 +7,13 @@
     <list default="true" id="0f66ce76-26b8-44e0-ba9f-bb8711f0b796" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myDiplom/diplom/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/diplom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/diplom/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/education.html" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/education.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/flashcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/flashcard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/templates/flashcards/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDiplom/diplom/flashcards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myDiplom/diplom/flashcards/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

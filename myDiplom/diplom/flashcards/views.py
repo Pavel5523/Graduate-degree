@@ -1,16 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-# from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import FlashcardForm
-# from django.views.generic import ListView
 from .models import *
 from random import randint
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
-def signupuser(request):
+def signupuser(request):  # Функция создания пользователя
     if request.method == 'GET':
         return render(request, 'flashcards/signupuser.html', {'form': UserCreationForm()})
     else:
@@ -29,7 +28,8 @@ def signupuser(request):
                           {'form': UserCreationForm(), 'error': 'Пароли не совпадают'})
 
 
-def home(request):
+@login_required
+def home(request):  # Функция домашней страницы
     if request.method == 'POST':
         logout(request)
         return redirect('come')
@@ -37,11 +37,11 @@ def home(request):
         return render(request, 'flashcards/home.html')
 
 
-def start(request):
+def start(request):  # Функция стартовой страницы
     return render(request, 'flashcards/start.html')
 
 
-def come(request):
+def come(request):  # Функция страницы авторизации
     if request.method == 'GET':
         return render(request, 'flashcards/come.html', {'form': AuthenticationForm()})
     else:
@@ -54,18 +54,15 @@ def come(request):
             return redirect('home')
 
 
-def logoutuser(request):
+@login_required
+def logoutuser(request):  # Функция разлогинивания
     if request.method == 'POST':
         logout(request)
         return redirect('start')
 
 
-# def flashcard(request):
-#     if request.method == 'GET':
-#         return render(request, 'flashcards/flashcard.html')
-
-
-def create_flashcard(request):
+@login_required
+def create_flashcard(request):  # Функция создания карточек
     if request.method == 'GET':
         return render(request, 'flashcards/create_flashcard.html', {'form': FlashcardForm()})
     else:
@@ -82,34 +79,27 @@ def create_flashcard(request):
                            'error': 'Заполненны неверные данные попробуйте еще раз'})
 
 
-def flashcard(request):
+@login_required
+def flashcard(request):  # Функция просмотра существующих карточек
     flashcards = Flashcards.objects.filter(user=request.user)
     return render(request, 'flashcards/flashcard.html', {'flashcards': flashcards})
 
 
-def delete_flashcard(request, flashcard_pk):
+@login_required
+def delete_flashcard(request, flashcard_pk):  # Функция удаленя карточек
     flashcard = get_object_or_404(Flashcards, pk=flashcard_pk, user=request.user)
     if request.method == 'POST':
         flashcard.delete()
         return redirect('flashcard')
 
 
-def back_home(request):
+@login_required
+def back_home(request):  # Функция возврата на домашнюю страницу
     return redirect(request, 'flashcard')
 
 
-def education(request):
+@login_required
+def education(request):  # Функция обучения с помощью карточек
     flashcard = Flashcards.objects.filter(user=request.user)
-    # print(len(flashcard))
-    # len_flashcard = len(flashcard)
-    # for card in range(len_flashcard):
-    #     len_flashcard -= 1
-    #     print(len_flashcard)
     random_card = flashcard[randint(0, len(flashcard) - 1)]
     return render(request, 'flashcards/education.html', {'flashcard': random_card})
-
-
-# def next(request):
-#     return render(request, 'flashcards/education.html')
-
-# Create your views here.

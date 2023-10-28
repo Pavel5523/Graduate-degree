@@ -3,7 +3,7 @@ body{
     background-color: rgb(207, 205, 160);
     text-align: center;
     padding-bottom: 0;
-    /* position: relative; */
+
 }
 .menu{
     background-color: lightskyblue;
@@ -27,11 +27,9 @@ body{
 }
 .createFlashcard{
     position: absolute;
-    /* text-align: center; */
     border: solid 5px;
     border-radius: 10px;
     background-color: aquamarine;
-    /* width: 500px; */
     left: 30%;
     right: 30%;
 }
@@ -59,10 +57,9 @@ body{
 }
 h1{
     text-align: center;
-    /* margin-top: 0; */
 }
 button{
-    background-color: blueviolet;
+    background-color: rgb(186, 123, 245);
     left: 30%;
     width: 200px;
     height: 50px;
@@ -80,7 +77,6 @@ h3{
     font-size: 36px;
     font-style: italic;
     color: black;
-    /* display: inline-block; */
 }
 .homeMenu ul{
     padding-left: 0;
@@ -94,39 +90,17 @@ h3{
     border-radius: 10px;
 }
 .blockFlashcard{
-    /* position:absolute; */
     border: solid 5px;
     background-color: rgb(29, 48, 61);
     text-align: center;
     border-radius: 10px;
-    /* padding: 10px; */
     padding-top: 0;
     left: 30%;
     right: 30%;
-    /* margin-top: 50px; */
 }
-/* .term{
-    border: solid 2px;
-    background-color: rgb(148, 200, 245);
-    margin: 5px;
-    font-size: 24px;
-} */
-/* .meaning{
-    border: solid 2px;
-    background-color: aliceblue;
-    margin-top: 5px;
-} */
-/* .subject{
-    border: solid 2px;
-    background-color: aliceblue;
-    font-size: 24px;
-} */
 .blockFlashcard div{
     margin: 10px;
 }
-/* .blockFlashcards ul li{
-    text-align: center;
-} */
 .block_roll{
     display: flex;
     justify-content: space-around;
@@ -185,4 +159,10 @@ ul{
     left: 20%;
     bottom: 0;
     border-radius: 10px;
+}
+.register{
+    border: solid 5px;
+    border-radius: 5px;
+    background-color: rgb(134, 251, 253);
+    
 }
